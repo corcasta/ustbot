@@ -1,0 +1,8 @@
+<launch>
+  <arg name="model" default="$(env MOBILEBOT_MODEL)" doc="model type [ustbot, burger, waffle, waffle_pi]"/>
+  <param name="model" value="$(arg model)"/>
+
+  <!-- turtlebot3_teleop_key already has its own built in velocity smoother -->
+  <node pkg="mobilebot_teleop" type="mobilebot_teleop_key" name="mobilebot_teleop_keyboard"  output="screen">
+  </node>
+</launch>
