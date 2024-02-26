@@ -1,3 +1,6 @@
+#For full documentation of the parameters in this file, and a list of all the
+#parameters available for TrajectoryPlannerROS, please see
+#http://www.ros.org/wiki/base_local_planner
 TrajectoryPlannerROS:
 
 # Robot Configuration Parameters
