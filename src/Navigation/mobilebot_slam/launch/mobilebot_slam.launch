@@ -6,9 +6,18 @@
   <arg name="open_rviz" default="true"/>
 
   <!-- mobilebot -->
-  <include file="$(find mobilebot_bringup)/launch/mobilebot_remote.launch">
-    <arg name="model" value="$(arg model)" />
-  </include>
+  <!-- TURTLEBOT3 remote -->
+  <group if="$(eval model != 'ustbot')"> 
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+      <arg name="model" value="$(arg model)" />
+    </include>
+  </group>
+  <!-- USTBOT remote -->
+  <group if="$(eval model == 'ustbot')"> 
+    <include file="$(find ustbot_bringup)/launch/ustbot_remote.launch">
+      <arg name="model" value="$(arg model)" />
+    </include>
+  </group>
 
   <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
   <include file="$(find mobilebot_slam)/launch/mobilebot_$(arg slam_methods).launch">
@@ -18,7 +27,16 @@
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
-    <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find mobilebot_slam)/rviz/mobilebot_$(arg slam_methods).rviz"/>
+    <!-- TURTLEBOT3 rviz -->
+    <group if="$(eval model != 'ustbot')"> 
+      <node pkg="rviz" type="rviz" name="rviz" required="true"
+            args="-d $(find mobilebot_slam)/rviz/turtlebot3_slam_rviz/turtlebot3_$(arg slam_methods).rviz"/>
+    </group>
+   <!-- USTBOT rviz -->
+    <group if="$(eval model == 'ustbot')"> 
+      <node pkg="rviz" type="rviz" name="rviz" required="true"
+            args="-d $(find mobilebot_slam)/rviz/ustbot_slam_rviz/ustbot_$(arg slam_methods).rviz"/>
+    </group>
   </group>
+
 </launch>
