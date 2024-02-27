@@ -4,10 +4,9 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot 
   name="ustbot">
-  <link 
-    name="base_footprint"/>
-    <joint 
-      name="base_joint" type="fixed">
+
+  <link  name="base_footprint"/>
+  <joint name="base_joint" type="fixed">
     <parent 
       link="base_footprint"/>
     <child 
@@ -16,9 +15,7 @@
       xyz="0.0 0.0 0.010" 
       rpy="0 0 0"/>
   </joint>
-
-  <link 
-    name="base_link">
+  <link name="base_link">
     <inertial>
       <origin
         xyz="0.013217 0.0075253 0.31131"
@@ -57,8 +54,7 @@
       </geometry>
     </collision>
   </link>
-  <link
-    name="left_wheelhub_link">
+  <link name="left_wheelhub_link">
     <inertial>
       <origin
         xyz="2.1270092198097E-18 3.74115927137672E-06 0.0346504264024086"
@@ -97,9 +93,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_wheelhub_joint"
-    type="revolute">
+  <joint name="left_wheelhub_joint" type="revolute">
     <origin
       xyz="0 0.19 0"
       rpy="-1.5708 0 0" />
@@ -115,8 +109,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="right_wheelhub_link">
+  <link name="right_wheelhub_link">
     <inertial>
       <origin
         xyz="-2.53974273110137E-18 3.74115927137672E-06 -0.0346504264024086"
@@ -155,9 +148,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_wheelhub_joint"
-    type="revolute">
+  <joint name="right_wheelhub_joint" type="revolute">
     <origin
       xyz="0 -0.19 0"
       rpy="-1.5708 0 0" />
@@ -173,8 +164,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="left_front_universal_link">
+  <link name="left_front_universal_link">
     <inertial>
       <origin
         xyz="-0.0173351211725158 -3.96780477057712E-07 0.0193726789338571"
@@ -213,9 +203,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_front_universal_joint"
-    type="revolute">
+  <joint name="left_front_universal_joint" type="revolute">
     <origin
       xyz="0.32 0.199 0.012"
       rpy="3.1416 0 0" />
@@ -231,8 +219,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="left_front_universalWheel_link">
+  <link name="left_front_universalWheel_link">
     <inertial>
       <origin
         xyz="0 5.29437604868122E-15 8.04911692853238E-16"
@@ -271,9 +258,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_front_universalWheel_joint"
-    type="revolute">
+  <joint name="left_front_universalWheel_joint" type="revolute">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -289,8 +274,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="left_back_universal_link">
+  <link name="left_back_universal_link">
     <inertial>
       <origin
         xyz="-0.0173351211725153 -3.96780477029957E-07 0.0193726789338557"
@@ -329,9 +313,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_back_universal_joint"
-    type="revolute">
+  <joint name="left_back_universal_joint" type="revolute">
     <origin
       xyz="-0.319 0.199 0.012"
       rpy="3.1416 0 0" />
@@ -347,8 +329,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="left_back_universalWheel_link">
+  <link name="left_back_universalWheel_link">
     <inertial>
       <origin
         xyz="5.55111512312578E-17 0 -2.77555756156289E-17"
@@ -387,9 +368,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_back_universalWheel_joint"
-    type="revolute">
+  <joint name="left_back_universalWheel_joint" type="revolute">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -405,8 +384,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="right_back_universal_link">
+  <link name="right_back_universal_link">
     <inertial>
       <origin
         xyz="-0.0173351211725146 -3.96780481498604E-07 0.019372678933856"
@@ -445,9 +423,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_back_universal_joint"
-    type="revolute">
+  <joint name="right_back_universal_joint" type="revolute">
     <origin
       xyz="-0.32 -0.199 0.012"
       rpy="3.1416 0 0" />
@@ -463,8 +439,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="right_back_universalWheel_link">
+  <link name="right_back_universalWheel_link">
     <inertial>
       <origin
         xyz="-5.55111512312578E-17 0 0"
@@ -503,9 +478,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_back_universalWheel_joint"
-    type="revolute">
+  <joint name="right_back_universalWheel_joint" type="revolute">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -521,8 +494,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="right_front_universal_link">
+  <link name="right_front_universal_link">
     <inertial>
       <origin
         xyz="-0.0173351211725143 -3.96780477113223E-07 0.0193726789338561"
@@ -561,9 +533,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_front_universal_joint"
-    type="revolute">
+  <joint name="right_front_universal_joint" type="revolute">
     <origin
       xyz="0.319 -0.199 0.012"
       rpy="3.1416 0 0" />
@@ -579,8 +549,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="right_front_universalWheel_link">
+  <link name="right_front_universalWheel_link">
     <inertial>
       <origin
         xyz="0 0 -5.55111512312578E-17"
@@ -619,9 +588,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_front_universalWheel_joint"
-    type="revolute">
+  <joint name="right_front_universalWheel_joint" type="revolute">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -637,8 +604,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="left_front_lidar_link">
+  <link name="left_front_lidar_link">
     <inertial>
       <origin
         xyz="-0.001209445380699 2.81552310193445E-05 -0.00557605689200613"
@@ -677,9 +643,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_front_lidar_joint"
-    type="fixed">
+  <joint name="left_front_lidar_joint" type="fixed">
     <origin
       xyz="0.385 0.24 0.14238"
       rpy="0 0 0.7854" />
@@ -690,8 +654,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="left_back_lidar_link">
+  <link name="left_back_lidar_link">
     <inertial>
       <origin
         xyz="-0.00120944538069895 2.81552310179845E-05 -0.00557605689200569"
@@ -730,9 +693,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_back_lidar_joint"
-    type="fixed">
+  <joint name="left_back_lidar_joint" type="fixed">
     <origin
       xyz="-0.38505 -0.24001 0.14238"
       rpy="0 0 -2.3562" />
@@ -743,8 +704,8 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="arm_base_link">
+  <!--
+  <link name="arm_base_link">
     <inertial>
       <origin
         xyz="-0.000711712698347439 0.000106262049453287 0.0781492762008092"
@@ -783,9 +744,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="arm_base_joint"
-    type="fixed">
+  <joint name="arm_base_joint" type="fixed">
     <origin
       xyz="0.235 0 0.6535"
       rpy="0 0 0" />
@@ -801,8 +760,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="shoulder_link">
+  <link name="shoulder_link">
     <inertial>
       <origin
         xyz="-0.0840018720035909 -0.208802974838312 -0.872375327554249"
@@ -841,9 +799,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="shoulder_joint"
-    type="revolute">
+  <joint name="shoulder_joint" type="revolute">
     <origin
       xyz="0.084 -0.199 -0.6415"
       rpy="-3.1416 0 0" />
@@ -859,8 +815,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="bicep_link">
+  <link name="bicep_link">
     <inertial>
       <origin
         xyz="-1.44667187100544E-05 -0.209035829145565 -0.00477389800841804"
@@ -899,9 +854,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="bicep_joint"
-    type="revolute">
+  <joint name="bicep_joint" type="revolute">
     <origin
       xyz="-0.084 -0.1792 -0.9263"
       rpy="1.5708 0 0" />
@@ -917,8 +870,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="forearm_link">
+  <link name="forearm_link">
     <inertial>
       <origin
         xyz="-4.16309103992707E-06 0.0799449656387601 -0.00673657663584737"
@@ -957,9 +909,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="forearm_joint"
-    type="revolute">
+  <joint name="forearm_joint" type="revolute">
     <origin
       xyz="0 -0.41 0.02885"
       rpy="3.1416 0 0" />
@@ -975,8 +925,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="spherical_wrist_1_link">
+  <link name="spherical_wrist_1_link">
     <inertial>
       <origin
         xyz="-1.33966470524938E-05 0.0134681682665654 0.0569185239491965"
@@ -1015,9 +964,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="spherocal_wrist_1_joint"
-    type="revolute">
+  <joint name="spherocal_wrist_1_joint" type="revolute">
     <origin
       xyz="0 0.2209 0.00805"
       rpy="-1.5708 0 0" />
@@ -1033,8 +980,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="spherical_wrist_2_link">
+  <link name="spherical_wrist_2_link">
     <inertial>
       <origin
         xyz="-7.14531001405616E-06 -0.0467740828401713 -0.00106495389643069"
@@ -1073,9 +1019,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="spherical_wrist_2_joint"
-    type="revolute">
+  <joint name="spherical_wrist_2_joint" type="revolute">
     <origin
       xyz="0 -0.01265 0.09345"
       rpy="-1.5708 0 0" />
@@ -1091,8 +1035,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="bracelet_link">
+  <link name="bracelet_link">
     <inertial>
       <origin
         xyz="-0.000338917389730686 0.000390769846620108 0.0262642401033273"
@@ -1131,9 +1074,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="bracelet_joint"
-    type="revolute">
+  <joint name="bracelet_joint" type="revolute">
     <origin
       xyz="0 -0.1184 0.0123"
       rpy="1.5708 0 0" />
@@ -1149,8 +1090,8 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link
-    name="front_right_ultrasonic_link">
+-->
+  <link name="front_right_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1189,9 +1130,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="front_right_ultrasonic_joint"
-    type="fixed">
+  <joint name="front_right_ultrasonic_joint" type="fixed">
     <origin
       xyz="0.447 -0.15 0.0755"
       rpy="0 0 0" />
@@ -1202,8 +1141,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="front_left_ultrasonic_link">
+  <link name="front_left_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 -1.3878E-17"
@@ -1242,9 +1180,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="front_left_ultrasonic_joint"
-    type="fixed">
+  <joint name="front_left_ultrasonic_joint" type="fixed">
     <origin
       xyz="0.447 0.15 0.0755"
       rpy="0 0 0" />
@@ -1255,8 +1191,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="left_front_ultrasonic_link">
+  <link name="left_front_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1295,9 +1230,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_front_ultrasonic_joint"
-    type="fixed">
+  <joint name="left_front_ultrasonic_joint" type="fixed">
     <origin
       xyz="0.275 0.302 0.0755"
       rpy="0 0 1.5708" />
@@ -1308,8 +1241,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="left_back_ultrasonic_link">
+  <link name="left_back_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1348,9 +1280,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="left_back_ultrasonic_joint"
-    type="fixed">
+  <joint name="left_back_ultrasonic_joint" type="fixed">
     <origin
       xyz="-0.275 0.302 0.0755"
       rpy="0 0 1.5708" />
@@ -1361,8 +1291,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="back_left_ultrasonic_link">
+  <link name="back_left_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1401,9 +1330,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="back_left_ultrasonic_joint"
-    type="fixed">
+  <joint name="back_left_ultrasonic_joint" type="fixed">
     <origin
       xyz="-0.447 0.15 0.0755"
       rpy="0 0 3.1416" />
@@ -1414,8 +1341,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="back_right_ultrasonic_link">
+  <link name="back_right_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1454,9 +1380,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="back_right_ultrasonic_joint"
-    type="fixed">
+  <joint name="back_right_ultrasonic_joint" type="fixed">
     <origin
       xyz="-0.447 -0.15 0.0755"
       rpy="0 0 3.1416" />
@@ -1467,8 +1391,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="right_back_ultrasonic_link">
+  <link name="right_back_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1507,9 +1430,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_back_ultrasonic_joint"
-    type="fixed">
+  <joint name="right_back_ultrasonic_joint" type="fixed">
     <origin
       xyz="-0.275 -0.302 0.0755"
       rpy="0 0 -1.5708" />
@@ -1520,8 +1441,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
-  <link
-    name="right_front_ultrasonic_link">
+  <link name="right_front_ultrasonic_link">
     <inertial>
       <origin
         xyz="-0.014787 0 0"
@@ -1560,9 +1480,7 @@
       </geometry>
     </collision>
   </link>
-  <joint
-    name="right_front_ultrasonic_joint"
-    type="fixed">
+  <joint name="right_front_ultrasonic_joint" type="fixed">
     <origin
       xyz="0.275 -0.302 0.0755"
       rpy="0 0 -1.5708" />

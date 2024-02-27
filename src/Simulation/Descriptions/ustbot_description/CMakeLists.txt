@@ -1,14 +1,49 @@
-cmake_minimum_required(VERSION 2.8.3)
+################################################################################
+# Set minimum required version of cmake, project name and compile options
+################################################################################
+cmake_minimum_required(VERSION 3.0.2)
+project(ustbot_description)
 
-project(diffBasePlusArmLidarUltrasonic)
+################################################################################
+# Find catkin packages and libraries for catkin and system dependencies
+################################################################################
+find_package(catkin REQUIRED COMPONENTS
+  urdf
+)
 
-find_package(catkin REQUIRED)
+################################################################################
+# Setup for python modules and scripts
+################################################################################
 
-catkin_package()
+################################################################################
+# Declare ROS messages, services and actions
+################################################################################
 
-find_package(roslaunch)
+################################################################################
+# Declare ROS dynamic reconfigure parameters
+################################################################################
 
-foreach(dir config launch meshes urdf)
-	install(DIRECTORY ${dir}/
-		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+################################################################################
+# Declare catkin specific configuration to be passed to dependent projects
+################################################################################
+catkin_package(
+  CATKIN_DEPENDS urdf
+)
+
+################################################################################
+# Build
+################################################################################
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
+
+################################################################################
+# Install
+################################################################################
+install(DIRECTORY meshes rviz urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+################################################################################
+# Test
+################################################################################
