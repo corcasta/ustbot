@@ -28,6 +28,6 @@
   <export>
     <gazebo_ros gazebo_media_path="${prefix}"/>
     <!-- <gazebo_ros gazebo_model_path="${prefix}/models"/> -->
-    <gazebo_ros gazebo_model_path="${SIMULATION_MODELS}"/>
+    <gazebo_ros gazebo_model_path="${SIMULATION_MODELS_PATH}"/>
   </export>
 </package>

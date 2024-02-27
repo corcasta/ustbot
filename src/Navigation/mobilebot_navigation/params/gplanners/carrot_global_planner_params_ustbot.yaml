@@ -1,0 +1,3 @@
+CarrotPlanner:
+  min_dist_from_robot: 0.10   # The minimum distance from the robot in meters at which a goal point will be sent to the local planner.
+  #step_size:                 # default: Resolution of the associated costmap

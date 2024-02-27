@@ -7,46 +7,45 @@
   <arg name="odom_topic" default="odom" />
   <arg name="move_forward_only" default="false"/>
 
+
+  <!-- Global Planner Selection -->
+  <group if="$(eval global_planner == 'global')">
+    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+  </group>
+  <group if="$(eval global_planner == 'navfn')">
+    <param name="base_global_planner" value="navfn/NavfnROS"/>
+  </group>
+  <group if="$(eval global_planner == 'carrot')">
+    <param name="base_global_planner" value="carrot_planner/CarrotPlanner"/>
+  </group>
+
+  <!-- Local Planner Selection -->
+  <group if="$(eval local_planner == 'base')">
+    <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
+  </group>
+  <group if="$(eval local_planner == 'dwa')">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+  </group>
+  <group if="$(eval local_planner == 'mpcqf')">
+    <param name="base_local_planner" value="mpc_local_planner/MpcLocalPlannerROS" />
+  </group>
+  <group if="$(eval local_planner == 'mpcmt')">
+    <param name="base_local_planner" value="mpc_local_planner/MpcLocalPlannerROS" />
+  </group>
+
+
   <!-- move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <!-- Global Planner Selection -->
-    <group if="$(eval global_planner == global)">
-      <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
-    </group>
-    <group if="$(eval global_planner == navfn)">
-      <param name="base_global_planner" value="navfn/NavfnROS"/>
-    </group>
-    <group if="$(eval global_planner == carrot)">
-      <param name="base_global_planner" value="carrot_planner/CarrotPlanner"/>
-    </group>
-
-    <!-- Local Planner Selection -->
-    <group if="$(eval local_planner == base)">
-      <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
-    </group>
-    <group if="$(eval local_planner == dwa)">
-      <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
-    </group>
-    <group if="$(eval local_planner == mpcqf)">
-      <param name="base_local_planner" value="mpc_local_planner/MpcLocalPlannerROS" />
-    </group>
-    <group if="$(eval local_planner == mpcmt)">
-      <param name="base_local_planner" value="mpc_local_planner/MpcLocalPlannerROS" />
-    </group>
-
-    <rosparam file="$(find mobilebot_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find mobilebot_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find mobilebot_navigation)/param/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/param/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/param/move_base_params.yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/param/$(arg global_planner)_global_planner_params_$(arg model).yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/param/$(arg local_planner)_local_planner_params_$(arg model).yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/params/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find mobilebot_navigation)/params/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find mobilebot_navigation)/params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/params/move_base_params.yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/params/gplanners/$(arg global_planner)_global_planner_params_$(arg model).yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/params/lplanners/$(arg local_planner)_local_planner_params_$(arg model).yaml" command="load" />
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
     <remap from="odom" to="$(arg odom_topic)"/>
-
-    <group if="$(eval local_planner == 'dwa')">
-      <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
-    </group>
-  
   </node>
+  
+
 </launch>
