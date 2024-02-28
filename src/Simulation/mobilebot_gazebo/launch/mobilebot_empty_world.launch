@@ -18,9 +18,9 @@
       name="robot_description" 
       command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
     <node 
+      name="spawn_urdf" 
       pkg="gazebo_ros" 
       type="spawn_model" 
-      name="spawn_urdf" 
       args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
   </group>
 
@@ -29,10 +29,11 @@
       name="robot_description" 
       command="$(find xacro)/xacro $(find ustbot_description)/urdf/ustbot.urdf.xacro" />
     <node 
+      name="spawn_urdf" 
       pkg="gazebo_ros" 
       type="spawn_model" 
-      name="spawn_urdf" 
       args="-urdf -model ustbot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+    
     <!-- Load controller settings -->
     <rosparam  
       file="$(find ustbot_description)/config/ustbot_diff_drive_controller_params.yaml"
@@ -46,5 +47,7 @@
       output="screen"
       args="mobile_base_controller joint_state_controller"
     />
+    <!--
+    -->
   </group>
 </launch>

@@ -8,5 +8,6 @@
   <maintainer email="o@ust.hk">k</maintainer>
   <license>Apache 2.0</license>
   <buildtool_depend>catkin</buildtool_depend>
-  <depend>urdf</depend> 
+  <depend>urdf</depend>
+  <depend>xacro</depend> 
 </package>

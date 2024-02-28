@@ -9,6 +9,7 @@ project(ustbot_description)
 ################################################################################
 find_package(catkin REQUIRED COMPONENTS
   urdf
+  xacro
 )
 
 ################################################################################
@@ -27,7 +28,7 @@ find_package(catkin REQUIRED COMPONENTS
 # Declare catkin specific configuration to be passed to dependent projects
 ################################################################################
 catkin_package(
-  CATKIN_DEPENDS urdf
+  CATKIN_DEPENDS urdf xacro
 )
 
 ################################################################################
@@ -40,7 +41,7 @@ include_directories(
 ################################################################################
 # Install
 ################################################################################
-install(DIRECTORY meshes rviz urdf
+install(DIRECTORY meshes rviz urdf config
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 

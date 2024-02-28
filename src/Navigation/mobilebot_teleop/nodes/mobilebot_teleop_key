@@ -36,8 +36,8 @@ else:
   import tty, termios
 
 # HKUST mobilebase robot params
-USTBOT_MAX_LIN_VEL = 0.22
-USTBOT_MAX_ANG_VEL = 2.84
+USTBOT_MAX_LIN_VEL = 2.0
+USTBOT_MAX_ANG_VEL = 4.84
 
 # TURTLEBOT3 default param values
 BURGER_MAX_LIN_VEL = 0.22
@@ -139,7 +139,7 @@ if __name__=="__main__":
         settings = termios.tcgetattr(sys.stdin)
 
     rospy.init_node('mobilebot_teleop')
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('mobile_base_controller/cmd_vel', Twist, queue_size=10)
 
     # REMINDER: modify this line when using actual robot: "ustbot"
     mobilebot_model = rospy.get_param("model", "ustbot")

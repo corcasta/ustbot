@@ -1,7 +1,7 @@
 joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
-  
+
 mobile_base_controller:
   type        : "diff_drive_controller/DiffDriveController"
   left_wheel  : 'left_wheelhub_joint'
