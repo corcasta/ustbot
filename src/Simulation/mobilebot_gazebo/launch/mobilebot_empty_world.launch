@@ -27,11 +27,24 @@
   <group if="$(eval model == 'ustbot')">
     <param 
       name="robot_description" 
-      command="$(find xacro)/xacro $(find ustbot_description)/urdf/ustbot.urdf" />
+      command="$(find xacro)/xacro $(find ustbot_description)/urdf/ustbot.urdf.xacro" />
     <node 
       pkg="gazebo_ros" 
       type="spawn_model" 
       name="spawn_urdf" 
       args="-urdf -model ustbot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+    <!-- Load controller settings -->
+    <rosparam  
+      file="$(find ustbot_description)/config/ustbot_diff_drive_controller_params.yaml"
+      command="load" />
+    <!-- Load controller manager -->
+    <node 
+      name="ustbot_controller_manager"
+      pkg="controller_manager"
+      type="spawner"
+      respawn="false"
+      output="screen"
+      args="mobile_base_controller joint_state_controller"
+    />
   </group>
 </launch>

@@ -142,7 +142,7 @@ if __name__=="__main__":
     pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
 
     # REMINDER: modify this line when using actual robot: "ustbot"
-    mobilebot_model = rospy.get_param("model", "burger")
+    mobilebot_model = rospy.get_param("model", "ustbot")
 
     status = 0
     target_linear_vel   = 0.0

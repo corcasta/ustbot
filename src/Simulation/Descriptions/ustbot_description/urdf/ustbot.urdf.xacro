@@ -3,8 +3,17 @@
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot 
-  name="ustbot">
-
+  name="ustbot"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find ustbot_description)/urdf/ustbot.gazebo.xacro"/>
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <!--
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="link1"/>
+  </joint>
+  -->
   <link  name="base_footprint"/>
   <joint name="base_joint" type="fixed">
     <parent 
@@ -15,6 +24,7 @@
       xyz="0.0 0.0 0.010" 
       rpy="0 0 0"/>
   </joint>
+  <!-- ******************************************** -->
   <link name="base_link">
     <inertial>
       <origin
@@ -109,6 +119,15 @@
       effort="1000"
       velocity="1000" />
   </joint>
+  <transmission name="left_wheelhub_transmission">  
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheelhub_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheelhub_actuator">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
   <link name="right_wheelhub_link">
     <inertial>
       <origin
@@ -164,6 +183,15 @@
       effort="1000"
       velocity="1000" />
   </joint>
+  <transmission name="right_wheelhub_transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheelhub_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheelhub_actuator">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
   <link name="left_front_universal_link">
     <inertial>
       <origin
