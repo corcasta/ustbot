@@ -25,6 +25,8 @@
       rpy="0 0 0"/>
   </joint>
   <!-- ******************************************** -->
+  
+  <!-- ********** Driven Wheels Section ********** -->
   <link name="base_link">
     <inertial>
       <origin
@@ -103,16 +105,16 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_wheelhub_joint" type="revolute">
+  <joint name="left_wheelhub_joint" type="continuous">
     <origin
-      xyz="0 0.19 0"
+      xyz="0 0.19 0.005"
       rpy="-1.5708 0 0" />
     <parent
       link="base_link" />
     <child
       link="left_wheelhub_link" />
     <axis
-      xyz="0 0 -1" />
+      xyz="0 0 1" />
     <limit
       lower="-10000"
       upper="10000"
@@ -127,6 +129,7 @@
     <actuator name="left_wheelhub_actuator">
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
     </actuator>
+  
   </transmission>
   <link name="right_wheelhub_link">
     <inertial>
@@ -167,9 +170,9 @@
       </geometry>
     </collision>
   </link>
-  <joint name="right_wheelhub_joint" type="revolute">
+  <joint name="right_wheelhub_joint" type="continuous">
     <origin
-      xyz="0 -0.19 0"
+      xyz="0 -0.19 0.005"
       rpy="-1.5708 0 0" />
     <parent
       link="base_link" />
@@ -192,6 +195,9 @@
       <hardwareInterface>VelocityJointInterface</hardwareInterface>
     </actuator>
   </transmission>
+  <!-- ******************************************** -->
+
+  <!-- *******Suport Wheels Section******* -->
   <link name="left_front_universal_link">
     <inertial>
       <origin
@@ -231,7 +237,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_front_universal_joint" type="revolute">
+  <joint name="left_front_universal_joint" type="fixed">
     <origin
       xyz="0.32 0.199 0.012"
       rpy="3.1416 0 0" />
@@ -286,7 +292,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_front_universalWheel_joint" type="revolute">
+  <joint name="left_front_universalWheel_joint" type="fixed">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -341,7 +347,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_back_universal_joint" type="revolute">
+  <joint name="left_back_universal_joint" type="fixed">
     <origin
       xyz="-0.319 0.199 0.012"
       rpy="3.1416 0 0" />
@@ -396,7 +402,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="left_back_universalWheel_joint" type="revolute">
+  <joint name="left_back_universalWheel_joint" type="fixed">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -451,7 +457,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="right_back_universal_joint" type="revolute">
+  <joint name="right_back_universal_joint" type="fixed">
     <origin
       xyz="-0.32 -0.199 0.012"
       rpy="3.1416 0 0" />
@@ -506,7 +512,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="right_back_universalWheel_joint" type="revolute">
+  <joint name="right_back_universalWheel_joint" type="fixed">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -561,7 +567,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="right_front_universal_joint" type="revolute">
+  <joint name="right_front_universal_joint" type="fixed">
     <origin
       xyz="0.319 -0.199 0.012"
       rpy="3.1416 0 0" />
@@ -616,7 +622,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="right_front_universalWheel_joint" type="revolute">
+  <joint name="right_front_universalWheel_joint" type="fixed">
     <origin
       xyz="-0.035 0 0.052"
       rpy="1.5708 0 0" />
@@ -632,106 +638,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <link name="left_front_lidar_link">
-    <inertial>
-      <origin
-        xyz="-0.001209445380699 2.81552310193445E-05 -0.00557605689200613"
-        rpy="0 0 0" />
-      <mass
-        value="0.0424946334708201" />
-      <inertia
-        ixx="2.08146223668701E-05"
-        ixy="-5.54555355751048E-08"
-        ixz="3.09201322735379E-08"
-        iyy="2.05336461001076E-05"
-        iyz="6.83471548988187E-09"
-        izz="3.50841153067244E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://ustbot_description/meshes/left_front_lidar_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://ustbot_description/meshes/left_front_lidar_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="left_front_lidar_joint" type="fixed">
-    <origin
-      xyz="0.385 0.24 0.14238"
-      rpy="0 0 0.7854" />
-    <parent
-      link="base_link" />
-    <child
-      link="left_front_lidar_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
-  <link name="left_back_lidar_link">
-    <inertial>
-      <origin
-        xyz="-0.00120944538069895 2.81552310179845E-05 -0.00557605689200569"
-        rpy="0 0 0" />
-      <mass
-        value="0.04249463347082" />
-      <inertia
-        ixx="2.08146223668701E-05"
-        ixy="-5.54555355751912E-08"
-        ixz="3.09201322735433E-08"
-        iyy="2.05336461001075E-05"
-        iyz="6.83471548986516E-09"
-        izz="3.50841153067244E-05" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://ustbot_description/meshes/left_back_lidar_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://ustbot_description/meshes/left_back_lidar_link.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint name="left_back_lidar_joint" type="fixed">
-    <origin
-      xyz="-0.38505 -0.24001 0.14238"
-      rpy="0 0 -2.3562" />
-    <parent
-      link="base_link" />
-    <child
-      link="left_back_lidar_link" />
-    <axis
-      xyz="0 0 0" />
-  </joint>
+  <!-- ******************************************** -->
   <!--
   <link name="arm_base_link">
     <inertial>
@@ -1119,6 +1026,111 @@
       velocity="1000" />
   </joint>
 -->
+
+  <!-- *******Lidar Sensor Section******* -->
+  <link name="left_front_lidar_link">
+    <inertial>
+      <origin
+        xyz="-0.001209445380699 2.81552310193445E-05 -0.00557605689200613"
+        rpy="0 0 0" />
+      <mass
+        value="0.0424946334708201" />
+      <inertia
+        ixx="2.08146223668701E-05"
+        ixy="-5.54555355751048E-08"
+        ixz="3.09201322735379E-08"
+        iyy="2.05336461001076E-05"
+        iyz="6.83471548988187E-09"
+        izz="3.50841153067244E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ustbot_description/meshes/left_front_lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ustbot_description/meshes/left_front_lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_front_lidar_joint" type="fixed">
+    <origin
+      xyz="0.385 0.24 0.14238"
+      rpy="0 0 0.7854" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_front_lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="left_back_lidar_link">
+    <inertial>
+      <origin
+        xyz="-0.00120944538069895 2.81552310179845E-05 -0.00557605689200569"
+        rpy="0 0 0" />
+      <mass
+        value="0.04249463347082" />
+      <inertia
+        ixx="2.08146223668701E-05"
+        ixy="-5.54555355751912E-08"
+        ixz="3.09201322735433E-08"
+        iyy="2.05336461001075E-05"
+        iyz="6.83471548986516E-09"
+        izz="3.50841153067244E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ustbot_description/meshes/left_back_lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ustbot_description/meshes/left_back_lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="left_back_lidar_joint" type="fixed">
+    <origin
+      xyz="-0.38505 -0.24001 0.14238"
+      rpy="0 0 -2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_back_lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!-- ******************************************** -->
+  
+  <!-- *******Ultrasonic Section******* -->
   <link name="front_right_ultrasonic_link">
     <inertial>
       <origin
