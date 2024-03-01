@@ -140,6 +140,7 @@ if __name__=="__main__":
 
     rospy.init_node('mobilebot_teleop')
     pub = rospy.Publisher('mobile_base_controller/cmd_vel', Twist, queue_size=10)
+    #pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
 
     # REMINDER: modify this line when using actual robot: "ustbot"
     mobilebot_model = rospy.get_param("model", "ustbot")
