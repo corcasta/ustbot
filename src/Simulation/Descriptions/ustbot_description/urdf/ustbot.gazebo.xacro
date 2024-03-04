@@ -3,12 +3,6 @@
 
 <xacro:property name="body_color" value="Gazebo/Silver" />
 
-<!--
-<gazebo>
-  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-  </plugin>
-</gazebo>
--->
 
 <gazebo>
   <plugin name="ustbot_controller" filename="libgazebo_ros_diff_drive.so">
@@ -28,30 +22,39 @@
     <wheelSeparation>0.45</wheelSeparation>
     <wheelDiameter>0.165</wheelDiameter>
     <wheelAcceleration>1</wheelAcceleration>
-    <wheelTorque>100</wheelTorque>
+    <wheelTorque>70</wheelTorque>
     <rosDebugLevel>na</rosDebugLevel>
   </plugin>
 </gazebo>
 
 <gazebo reference="base_link">
-  <material>${body_color}</material>
-  <mu1>0.1</mu1>
-  <mu2>0.1</mu2>
-  <selfCollide>true</selfCollide>
+  <material>Gazebo/DarkGrey </material>
+  <mu1>0.05</mu1>
+  <mu2>0.05</mu2>
   <gravity>true</gravity>
 </gazebo>
 
 <gazebo reference="wheel_right">
-  <material>${body_color}</material>
+  <material>Gazebo/FlatBlack</material>
   <mu1>3500</mu1>
   <mu2>3500</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
 <gazebo reference="wheel_left">
-  <material>${body_color}</material>
+  <material>Gazebo/FlatBlack</material>
   <mu1>3500</mu1>
   <mu2>3500</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_front">
+  <material>Gazebo/Blue</material>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_back">
+  <material>Gazebo/Blue</material>
   <selfCollide>true</selfCollide>
 </gazebo>
 
@@ -112,19 +115,7 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="lidar_front">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
 
-<gazebo reference="lidar_back">
-  <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
-  <selfCollide>true</selfCollide>
-</gazebo>
 -->
 
 </robot>

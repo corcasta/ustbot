@@ -24,14 +24,14 @@
   <visual>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/base_link.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/base_link.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -45,14 +45,14 @@
   <visual>
     <origin xyz="-0.0 0.225 -0.0825" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/wheel_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/wheel_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.0 0.225 -0.0825" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/wheel_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/wheel_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -66,14 +66,14 @@
   <visual>
     <origin xyz="-0.0 -0.225 -0.0825" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/wheel_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/wheel_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.0 -0.225 -0.0825" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/wheel_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/wheel_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -87,14 +87,14 @@
   <visual>
     <origin xyz="-0.44501 0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_front_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_front_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.44501 0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_front_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_front_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -108,14 +108,14 @@
   <visual>
     <origin xyz="-0.44501 -0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_front_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_front_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.44501 -0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_front_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_front_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -129,14 +129,14 @@
   <visual>
     <origin xyz="-0.313812 -0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_left_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_left_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.313812 -0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_left_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_left_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -150,14 +150,14 @@
   <visual>
     <origin xyz="0.313812 -0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_left_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_left_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="0.313812 -0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_left_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_left_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -171,14 +171,14 @@
   <visual>
     <origin xyz="0.44501 -0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_back_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_back_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="0.44501 -0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_back_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_back_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -192,14 +192,14 @@
   <visual>
     <origin xyz="0.44501 0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_back_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_back_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="0.44501 0.172077 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_back_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_back_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -213,14 +213,14 @@
   <visual>
     <origin xyz="0.313812 0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_right_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_right_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="0.313812 0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_right_left.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_right_left.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -234,14 +234,14 @@
   <visual>
     <origin xyz="-0.313812 0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_right_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_right_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.313812 0.30001 -0.1955" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/ultrasonic_right_right.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/ultrasonic_right_right.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -255,14 +255,14 @@
   <visual>
     <origin xyz="-0.386 -0.241 -0.23751" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/lidar_front.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/lidar_front.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="-0.386 -0.241 -0.23751" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/lidar_front.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/lidar_front.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -276,14 +276,14 @@
   <visual>
     <origin xyz="0.386 0.241 -0.23751" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/lidar_back.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/lidar_back.STL" scale="0.001 0.001 0.001"/>
     </geometry>
-    <material name="silver"/>
+    
   </visual>
   <collision>
     <origin xyz="0.386 0.241 -0.23751" rpy="0 0 0"/>
     <geometry>
-      <mesh filename="package://ustbot_description/meshes2/lidar_back.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://ustbot_description/meshes/lidar_back.STL" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
