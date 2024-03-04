@@ -253,14 +253,14 @@
     <inertia ixx="5.8e-05" iyy="5.8e-05" izz="8.8e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
   </inertial>
   <visual>
-    <origin xyz="-0.386 -0.241 -0.23751" rpy="0 0 0"/>
+    <origin xyz="-0.386 -0.241 -0.25751" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://ustbot_description/meshes/lidar_front.STL" scale="0.001 0.001 0.001"/>
     </geometry>
     
   </visual>
   <collision>
-    <origin xyz="-0.386 -0.241 -0.23751" rpy="0 0 0"/>
+    <origin xyz="-0.386 -0.241 -0.25751" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://ustbot_description/meshes/lidar_front.STL" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -274,14 +274,14 @@
     <inertia ixx="5.8e-05" iyy="5.8e-05" izz="8.8e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
   </inertial>
   <visual>
-    <origin xyz="0.386 0.241 -0.23751" rpy="0 0 0"/>
+    <origin xyz="0.386 0.241 -0.25751" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://ustbot_description/meshes/lidar_back.STL" scale="0.001 0.001 0.001"/>
     </geometry>
     
   </visual>
   <collision>
-    <origin xyz="0.386 0.241 -0.23751" rpy="0 0 0"/>
+    <origin xyz="0.386 0.241 -0.25751" rpy="0 0 0"/>
     <geometry>
       <mesh filename="package://ustbot_description/meshes/lidar_back.STL" scale="0.001 0.001 0.001"/>
     </geometry>
@@ -351,14 +351,14 @@
 </joint>
 
 <joint name="lidar_front_joint" type="fixed">
-  <origin xyz="0.386 0.241 0.23751" rpy="0 0 0"/>
+  <origin xyz="0.386 0.241 0.25751" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="lidar_front"/>
   <axis xyz="0.0 0.0 1.0"/>
 </joint>
 
 <joint name="lidar_back_joint" type="fixed">
-  <origin xyz="-0.386 -0.241 0.23751" rpy="0 0 0"/>
+  <origin xyz="-0.386 -0.241 0.25751" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="lidar_back"/>
   <axis xyz="0.0 0.0 1.0"/>
