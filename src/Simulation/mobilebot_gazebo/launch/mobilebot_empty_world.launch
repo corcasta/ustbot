@@ -35,10 +35,13 @@
       args="-urdf -model ustbot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
     
     <!-- Load controller settings -->
+    <!--
     <rosparam  
       file="$(find ustbot_description)/config/ustbot_diff_drive_controller_params.yaml"
       command="load" />
+    -->
     <!-- Load controller manager -->
+    <!--
     <node 
       name="ustbot_controller_manager"
       pkg="controller_manager"
@@ -47,6 +50,8 @@
       output="screen"
       args="mobile_base_controller joint_state_controller"
     />
+  -->
+  
     <!--
     -->
   </group>
