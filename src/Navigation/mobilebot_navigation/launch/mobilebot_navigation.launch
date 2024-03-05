@@ -20,9 +20,9 @@
       </include>
     </group>
 
-  <!-- Laser Merger 
+  <!-- Laser Merger -->
   <include file="$(find ira_laser_tools)/launch/laserscan_multi_merger.launch" />
-  -->
+
   
   <!-- Map server -->
   <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
