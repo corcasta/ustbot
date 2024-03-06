@@ -1,9 +1,21 @@
+# Params reference: http://wiki.ros.org/move_base#Parameters
+
+#base_global_planner: "navfn/NavfnROS"            
+#base_local_planner: "base_local_planner/TrajectoryPlannerROS"
+
+#base_global_planner: "navfn/NavfnROS"                         # plugin_package_name/planner 
+#base_local_planner: "dwa_local_planner/DWAPlannerROS" # plugin_package_name/planner
+
+base_global_planner: "navfn/NavfnROS"
+base_local_planner: "teb_local_planner/TebLocalPlannerROS"
+
 shutdown_costmaps: false
-controller_frequency: 10.0
+controller_frequency: 20.0
 planner_patience: 5.0
 controller_patience: 15.0
 conservative_reset_dist: 3.0
-planner_frequency: 5.0
+planner_frequency: 10.0
 oscillation_timeout: 10.0
 oscillation_distance: 0.2
+
 

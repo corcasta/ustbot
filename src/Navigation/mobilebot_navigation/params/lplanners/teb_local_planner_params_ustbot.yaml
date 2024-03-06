@@ -1,0 +1,28 @@
+TebLocalPlannerROS:
+# Params reference: http://wiki.ros.org/teb_local_planner
+# Robot Configuration Parameters
+  acc_lim_x: 0.7
+  acc_lim_theta: 0.7 
+
+  max_vel_x: 1.0
+  max_vel_theta: 0.4
+
+  min_turning_radius: 0.9
+
+  footprint_model:
+    type: "polygon"
+    # vertices should be the same as the base_footprint in costmap_common_params
+    vertices: [[-0.477, -0.345], [0.477, -0.345], [0.477, 0.345], [-0.477, 0.345]]
+
+# Goal Tolerance Parameters
+  xy_goal_tolerance: 0.01
+  yaw_goal_tolerance: 0.05
+  free_goal_vel: False
+
+# Trajectory Configuration Parameters
+
+# Obstacle Parameters
+  min_obstacle_dist: 0.4
+  include_costmap_obstacles: True
+  inflation_dist: 0.5
+  include_dynamic_obstacles: True
