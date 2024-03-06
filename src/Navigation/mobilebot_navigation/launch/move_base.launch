@@ -41,8 +41,10 @@
     <rosparam file="$(find mobilebot_navigation)/params/local_costmap_params.yaml" command="load" />
     <rosparam file="$(find mobilebot_navigation)/params/global_costmap_params.yaml" command="load" />
     <rosparam file="$(find mobilebot_navigation)/params/move_base_params.yaml" command="load" />
+    <!--
     <rosparam file="$(find mobilebot_navigation)/params/gplanners/$(arg global_planner)_global_planner_params_$(arg model).yaml" command="load" />
     <rosparam file="$(find mobilebot_navigation)/params/lplanners/$(arg local_planner)_local_planner_params_$(arg model).yaml" command="load" />
+    -->
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
     <remap from="odom" to="$(arg odom_topic)"/>
   </node>

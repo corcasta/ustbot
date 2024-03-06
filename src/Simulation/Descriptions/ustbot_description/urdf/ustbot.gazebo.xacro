@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="ustbot_sim" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+<robot name="ustbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:arg name="laser_visual" default="false"/>
   <xacro:property name="body_color" value="Gazebo/Silver" />
 
@@ -28,7 +28,7 @@
 
   <!-- *********** simulated ray sensor FRONT side *********** -->
   <gazebo reference="lidar_front">
-    <material>Gazebo/FlatBlack</material>
+    <material>Gazebo/Blue</material>
     <sensor type="ray" name="lidar_front_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>$(arg laser_visual)</visualize>
@@ -62,7 +62,7 @@
 
   <!-- *********** simulated ray sensor BACK side *********** -->
   <gazebo reference="lidar_back">
-    <material>Gazebo/FlatBlack</material>
+    <material>Gazebo/Blue</material>
     <sensor type="ray" name="lidar_back_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>$(arg laser_visual)</visualize>
@@ -115,15 +115,6 @@
     <selfCollide>true</selfCollide>
   </gazebo>
 
-  <gazebo reference="lidar_front">
-    <material>Gazebo/Blue</material>
-    <selfCollide>true</selfCollide>
-  </gazebo>
-
-  <gazebo reference="lidar_back">
-    <material>Gazebo/Blue</material>
-    <selfCollide>true</selfCollide>
-  </gazebo>
 
   <!--
   <gazebo reference="ultrasonic_front_right">
