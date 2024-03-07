@@ -2,12 +2,12 @@ local_costmap:
   global_frame: odom
   robot_base_frame: base_footprint
   
-  inflation_radius: 1.4     # 1.25  , 1.4
-  cost_scaling_factor: 14.0  # 19.0  , 9.7
+  inflation_radius: 1.29     # 1.25  , 1.4
+  cost_scaling_factor: 13.9  # 19.0  , 9.7
 
   update_frequency: 15.0
   publish_frequency: 15.0
-  transform_tolerance: 0.5  
+  transform_tolerance: 0.2  
  
   rolling_window: true
   width: 3
