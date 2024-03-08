@@ -172,8 +172,6 @@
     <mu2>0.2</mu2>
     <selfCollide>true</selfCollide>
   </gazebo>
-
-
   -->
 
 </robot>

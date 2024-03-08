@@ -34,6 +34,12 @@
       type="spawn_model" 
       args="-urdf -model ustbot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
     
+    
+    <!-- ************************************************************************ -->
+    <!-- These nodes are necessary when using controllers in real robot, for      -->
+    <!-- simulation purposes we are using gazebo plugins and internal controllers -->
+    <!-- ************************************************************************ -->
+    
     <!-- Load controller settings -->
     <!--
     <rosparam  
@@ -50,7 +56,7 @@
       output="screen"
       args="mobile_base_controller joint_state_controller"
     />
-  -->
-  
+    -->
+    <!-- ************************************************************************ -->
   </group>
 </launch>

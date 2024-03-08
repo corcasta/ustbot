@@ -15,8 +15,10 @@ MpcLocalPlannerROS:
 
   ## Footprint model for collision avoidance
   footprint_model:
-    type: "point"
-    is_footprint_dynamic: False
+    type: "polygon"
+    # vertices should be the same as the base_footprint in costmap_common_params
+    vertices: [[-0.471, -0.34], [0.471, -0.34], [0.471, 0.34], [-0.471, 0.34]]
+
 
   ## Collision avoidance
   collision_avoidance:
@@ -84,13 +86,13 @@ MpcLocalPlannerROS:
   solver:
     type: "ipopt"
     ipopt:
-      iterations: 100
+      iterations: 10
       max_cpu_time: -1.0
       ipopt_numeric_options:
-        tol: 1e-4
+        tol: 1e-2
       ipopt_string_options:
         linear_solver: "mumps" 
-        hessian_approximation: "exact" # exact or limited-memory
+        hessian_approximation: "limited-memory" # exact or limited-memory
     lsq_lm:
       iterations: 10
       weight_init_eq: 2
