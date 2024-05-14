@@ -2,7 +2,7 @@
 <robot name="ustbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:arg name="laser_visual" default="false"/>
   <xacro:property name="body_color" value="Gazebo/Silver" />
-
+  
   <gazebo>
     <plugin name="ustbot_controller" filename="libgazebo_ros_diff_drive.so">
       <commandTopic>cmd_vel</commandTopic>
