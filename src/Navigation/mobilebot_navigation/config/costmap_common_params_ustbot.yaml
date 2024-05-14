@@ -1,0 +1,9 @@
+obstacle_range: 3.0
+raytrace_range: 3.5
+
+footprint: [[-0.471, -0.34], [0.471, -0.34], [0.471, 0.34], [-0.471, 0.34]]
+map_type: costmap
+observation_sources: scan_front scan_back
+
+scan_front: {sensor_frame: lidar_front, data_type: LaserScan, topic: scan_front, marking: true, clearing: true}
+scan_back: {sensor_frame: lidar_back, data_type: LaserScan, topic: scan_back, marking: true, clearing: true}

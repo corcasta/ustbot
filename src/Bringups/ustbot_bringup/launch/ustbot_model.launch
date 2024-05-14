@@ -7,7 +7,9 @@
     <arg name="multi_robot_name" value="$(arg multi_robot_name)"/>
   </include>
   
-  <!-- 
+  
+  <!-- These nodes is just for debugging/making sure the joints move accordingly
+
   <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
     <param name="use_gui" value="false"/>
     <param name="rate" value="50"/>

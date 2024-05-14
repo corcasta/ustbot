@@ -1,6 +1,6 @@
 <launch>
   <!-- Arguments -->
-  <arg name="model" default="$(env MOBILEBOT_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="model" default="$(env MOBILEBOT_MODEL)" doc="model type [ustbot, burger, waffle, waffle_pi]"/>
   <arg name="configuration_basename" default="mobilebot_lds_2d.lua"/>
 
   <!-- slam_karto -->

@@ -2,13 +2,16 @@
   <!-- Arguments -->
   <arg name="model" default="$(env MOBILEBOT_MODEL)" doc="model type [ustbot, burger, waffle, waffle_pi]"/>
   <arg name="global_planner" default="$(env GLOBAL_PLANNER)" doc="model type [global, navfn, carrot]"/>
-  <arg name="local_planner" default="$(env LOCAL_PLANNER)" doc="model type [base, dwa, mpcqf, mpcmt]"/>
+  <arg name="local_planner" default="$(env LOCAL_PLANNER)" doc="model type [base, teb, dwa, mpcqf, mpcmt]"/>
   <arg name="cmd_vel_topic" default="/cmd_vel" />
   <arg name="odom_topic" default="odom" />
   <arg name="move_forward_only" default="false"/>
 
 
-  <!-- Global Planner Selection -->
+  <!-- ************************************************************************************************************** -->
+  <!-- THIS SECTION IS NOT RELEVANT ANYMORE SINCE THE ACTUAL PLANNER SELECTION IS DONE INSIDE move_base_params.yaml -->
+
+  <!-- Global Planner Selection 
   <group if="$(eval global_planner == 'global')">
     <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
   </group>
@@ -18,10 +21,14 @@
   <group if="$(eval global_planner == 'carrot')">
     <param name="base_global_planner" value="carrot_planner/CarrotPlanner"/>
   </group>
+  -->
 
-  <!-- Local Planner Selection -->
+  <!-- Local Planner Selection 
   <group if="$(eval local_planner == 'base')">
     <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
+  </group>
+  <group if="$(eval local_planner == 'teb')">
+    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
   </group>
   <group if="$(eval local_planner == 'dwa')">
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
@@ -32,17 +39,19 @@
   <group if="$(eval local_planner == 'mpcmt')">
     <param name="base_local_planner" value="mpc_local_planner/MpcLocalPlannerROS" />
   </group>
+  -->
+<!-- ************************************************************************************************************** -->
 
 
   <!-- move_base -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find mobilebot_navigation)/params/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find mobilebot_navigation)/params/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find mobilebot_navigation)/params/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/params/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/params/move_base_params.yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/params/gplanners/$(arg global_planner)_global_planner_params_$(arg model).yaml" command="load" />
-    <rosparam file="$(find mobilebot_navigation)/params/lplanners/$(arg local_planner)_local_planner_params_$(arg model).yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/config/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find mobilebot_navigation)/config/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find mobilebot_navigation)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/config/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/config/move_base_params.yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/config/gplanners/$(arg global_planner)_global_planner_params_$(arg model).yaml" command="load" />
+    <rosparam file="$(find mobilebot_navigation)/config/lplanners/$(arg local_planner)_local_planner_params_$(arg model).yaml" command="load" />
     <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
     <remap from="odom" to="$(arg odom_topic)"/>
   </node>

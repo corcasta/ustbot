@@ -5,7 +5,7 @@
   <arg name="z_pos" default="0.0"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(env WORLDS_PATH)/empty.world"/>
+    <arg name="world_name" value="$(env WORLDS_PATH)/maze_cones_world.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -34,12 +34,12 @@
       type="spawn_model" 
       args="-urdf -model ustbot -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
     
-
+    
     <!-- ************************************************************************ -->
     <!-- These nodes are necessary when using controllers in real robot, for      -->
     <!-- simulation purposes we are using gazebo plugins and internal controllers -->
     <!-- ************************************************************************ -->
-
+    
     <!-- Load controller settings -->
     <!--
     <rosparam  
@@ -58,6 +58,5 @@
     />
     -->
     <!-- ************************************************************************ -->
-  
   </group>
 </launch>
